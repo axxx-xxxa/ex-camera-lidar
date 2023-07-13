@@ -1,0 +1,54 @@
+#topic
+lidar_node: "/points_raw"
+right_lidar_node: "/11right_lidar_points_raw"
+camera_node: "/ud_camera8"
+
+#1:pinhole  2:fish eye  3:MEI
+camera_model: 3
+
+useRobotSensor: true
+
+# Data path. adjust them!
+common:
+  result_path: "/media/ubuntu/G/projects/calibration/ex-camera-velodyne/ud_calib/ud_lidar_camera_calib_points_mei/src/lidar_camera_calib/config/"
+  extrinsic_file: "extrinsic.txt"
+  save_img: false
+  save_pcl: false
+  save_points: false
+
+#width_:1920 height_:1080
+# Camera Parameters. Adjust them!
+
+camera_matrix: [1454.515176501184, 0.0, 990.2579978116033, 0.0, 1448.0527530620052,
+  538.3493573485285, 0.0, 0.0, 1.0]
+dist_coeffs: [0.9839562726662475, -1.7043668405862393, -0.0035495240112069187, -0.00412680323152533]
+MEI_xi: 1.8421074061123517
+
+#ExtrinsicMat: !!opencv-matrix
+ExtrinsicMat:
+  rows: 4
+  cols: 4
+  dt: d
+  data: [0.0,   -1.0,   0.0,    0.0,
+         0.0,  0.0,  -1.0,    0.0,
+         1.0,   0.0,    0.0,    0.0,
+         0.0,   0.0,    0.0,    1.0]
+
+Cloud:
+  leftdis: 3.0
+  rightdis: -3.0
+  intensityth: 200
+  EuclMinPointsNum: 2
+  EuclMaxPointsNum: 9999
+  EuclMinDistance: 0.1
+  Zdis: 0.1
+
+Image:
+  Ydis: 100
+  ScreenW: 1280 #1280
+  ScreenH: 800  #800
+
+Voxel:
+  size: 1.0
+  down_sample_size: 0.02
+

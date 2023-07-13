@@ -1,0 +1,6 @@
+<!-- -->
+<launch>
+  <rosparam command="load" file="$(find lidar_camera_calib)/config/calib.yaml" />
+  <node pkg="lidar_camera_calib" type="lidar_camera_calib" name="lidar_camera_calib" output="screen">
+  </node>
+</launch>
